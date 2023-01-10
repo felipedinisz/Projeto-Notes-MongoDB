@@ -27,6 +27,7 @@ html, body {
 
 .btn {
   margin-right: 12px;
+  max-height: 40px;
 }
 
 footer {
