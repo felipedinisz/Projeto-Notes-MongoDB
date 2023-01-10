@@ -1,1 +1,13 @@
-<h1>Outra view</h1>
+<a href="/">Voltar</a>
+<h2>Adicione uma nota:</h2>
+<form action="/notes" method="post">
+  <div class="mb-3">
+    <label for="title" class="form-label">Título:</label>
+    <input type="text" name="title" id="title" class="form-control" placeholder="O que você pretende fazer hoje?">
+  </div>
+    <div class="mb-3">
+    <label for="description" class="form-label">Descrição:</label>
+    <textarea name="description" id="description" class="form-control" placeholder="Descreva..."></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Criar nota:</button>
+</form>
