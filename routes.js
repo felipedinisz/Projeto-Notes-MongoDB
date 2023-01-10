@@ -9,4 +9,5 @@ route.get("/:id", notes.details);
 route.get("/edit/:id", notes.editnote);
 route.post("/notes", notes.postnotes);
 route.post("/delete", notes.delete);
+route.post("/update", notes.updatenotes)
 module.exports = route;

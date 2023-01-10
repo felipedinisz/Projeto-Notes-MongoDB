@@ -27,14 +27,17 @@ exports.editnote = (req, res) => {
 
     res.render("edit", { note });
   })().catch((err) => console.log(err));
-}
+};
 
 exports.postnotes = (req, res) => {
   const data = req.body;
   const title = data.title;
   const description = data.description;
 
-  db.getDb().db().collection("notes").insertOne({ title: title, description: description });
+  db.getDb()
+    .db()
+    .collection("notes")
+    .insertOne({ title: title, description: description });
 
   res.redirect(301, "/");
 };
@@ -44,6 +47,23 @@ exports.delete = function (req, res) {
   const id = new ObjectId(data.id);
 
   db.getDb().db().collection("notes").deleteOne({ _id: id });
+
+  res.redirect(301, "/");
+};
+
+exports.updatenotes = function (req, res) {
+  const data = req.body;
+  const id = new ObjectId(data.id);
+  const title = data.title;
+  const description = data.description;
+
+  db.getDb()
+    .db()
+    .collection("notes")
+    .updateOne(
+      { _id: id },
+      { $set: { title: title, description: description } }
+    );
 
   res.redirect(301, "/");
 };
