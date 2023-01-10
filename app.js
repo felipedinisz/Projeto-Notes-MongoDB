@@ -29,3 +29,4 @@ db.initDb((err, db) => {
     console.log(`Acessar http://localhost:${port}`)
   })
 })
+
