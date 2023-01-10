@@ -40,6 +40,10 @@ footer {
 
 }
 
+.alert{
+  margin: 10px 0;
+}
+
 @media(max-width: 425px) {
   #main-container {
     padding: 30px;
